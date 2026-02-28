@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mobile Legends Double Diamonds</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,1,0" rel="stylesheet">
+
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="games.css">
+  <link rel="stylesheet" href="../../footer.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="../../assets/images/banners/ryuko.png" alt="Logo">
+    </div>
+<!--    <a href="" class="login-btn">
+      <i class="fa fa-user-circle"></i>
+      <span>LOGIN</span>
+    </a> -->
+  </header>
+
+  <!-- ===== PRODUCT SECTION ===== -->
+  <section class="product-banner" id="productBanner">
+    <div class="banner-overlay">
+      <div class="product-card">
+        <img src="../../assets/images/game-icons/doublediamonds.jpg" alt="Double Diamonds" class="game-icon" />
+        <div class="product-info">
+          <h2>MOBILE LEGENDS DOUBLE DIAMONDS</h2>
+          <div class="badge-row">
+            <span class="badge"><span class="material-symbols-rounded">headset_mic</span> Chat Support</span>
+            <span class="badge"><span class="material-symbols-rounded">account_balance</span> Safe Pay</span>
+            <span class="badge"><span class="material-symbols-rounded">verified</span> Official</span>
+            <span class="badge"><span class="material-symbols-rounded">workspace_premium</span> Guarantee</span>
+            <span class="badge"><span class="material-symbols-rounded">bolt</span> Instant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO PURCHASE ===== -->
+  <div class="how-to" id="howToBtn">
+    <i class="fa fa-info-circle"></i> How to Purchase
+  </div>
+
+  <!-- ===== POPUP IMAGE MODAL ===== -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <img src="../../assets/images/product/mlbbguide.jpg" alt="How to Purchase" class="popup-image">
+    </div>
+  </div>
+
+  <!-- ===== NOTES ===== -->
+  <div class="notes-box">
+    <p class="notes-text" id="notesText">
+      Important Notes:<br>
+      - If you see any errors while checking in the game, it may be due to region lock.<span class="dots">...</span>
+      <span class="more-text">
+        <br>- Make sure to verify your MLBB account region on the home page.
+        <br>- Bonus Diamonds will not count toward tasks.
+        <br><br>
+        How to Purchase Diamonds in MLBB:
+        <br>- Select the Diamond denomination you want to purchase.
+        <br>- Enter your MLBB User ID and Zone ID.
+        <br>- Proceed to checkout and choose your preferred payment method.
+        <br>- After completing the payment, the purchased Diamonds will be credited to your account instantly.
+      </span>
+    </p>
+    <div class="view-more" id="toggleBtn">View More</div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-panel">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search games or packs..." autocomplete="off">
+        <button id="close-search">&times;</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+      <div id="no-results" class="no-results">No results found 😕</div>
+    </div>
+  </div>
+
+<!-- Bottom Nav -->
+<div id="bottom-nav-container"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("bottom-nav-container").innerHTML = data;
+  });
+</script>
+
+  <!-- ===== ENTER IDS SECTION ===== -->
+  <section class="enter-ids">
+    <h3>
+      ENTER IDS
+      <span class="info-icon" id="idInfoIcon">?</span>
+    </h3>
+
+  <!-- ===== IMAGE POPUP (UNIQUE NAME) ===== -->
+  <div class="id-image-popup" id="idInfoPopup">
+    <div class="popup-content">
+      <button class="close-btn" id="idCloseBtn">&times;</button>
+      <img src="../../assets/images/product/enterids.jpg" alt="Info" />
+    </div>
+  </div>
+
+    <div class="input-group">
+      <div class="input-field">
+        <i class="material-symbols-rounded">person</i>
+        <input type="text" placeholder="User ID" />
+      </div>
+      <div class="input-field">
+        <i class="material-symbols-rounded">location_on</i>
+        <input type="text" placeholder="Zone ID" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SELECT PACKAGE ===== -->
+  <section class="select-package">
+    <h3>SELECT PACKAGE</h3>
+    
+  <div class="packages">
+    <!-- Package 1 -->
+    <label class="package">
+      <div class="tag">First Recharge 100</div>
+      <input type="radio" name="package" value="85" data-name="Mobile Legends Double Diamonds" data-items="55 Diamonds" data-stock="" checked />
+      <div class="content">55 Diamonds</div>
+      <div class="bonus">(50+5 Bonus)</div>
+      <div class="price">₹85</div>
+      <div class="icon"><img src="../../assets/images/product/doublediamonds.png" alt="Double Diamonds" /></div>
+      <div class="checkmark">✓</div>
+    </label>
+
+    <!-- Package 2 -->
+    <label class="package">
+      <div class="tag">First Recharge 300</div>
+      <input type="radio" name="package" value="250" data-name="Mobile Legends Double Diamonds" data-items="165 Diamonds" data-stock="" />
+      <div class="content">165 Diamonds</div>
+      <div class="bonus">(150+15 Bonus)</div>
+      <div class="price">₹250</div>
+      <div class="icon"><img src="../../assets/images/product/doublediamonds.png" alt="Double Diamonds" /></div>
+      <div class="checkmark">✓</div>
+    </label>
+
+    <!-- Package 3 -->
+    <label class="package">
+      <div class="tag">First Recharge 500</div>
+      <input type="radio" name="package" value="400" data-name="Mobile Legends Double Diamonds" data-items="275 Diamonds" data-stock="" />
+      <div class="content">275 Diamonds</div>
+      <div class="bonus">(250+25 Bonus)</div>
+      <div class="price">₹400</div>
+      <div class="icon"><img src="../../assets/images/product/doublediamonds.png" alt="Double Diamonds" /></div>
+      <div class="checkmark">✓</div>
+    </label>
+    
+        <!-- Package 4 -->
+    <label class="package">
+      <div class="tag">First Recharge 1000</div>
+      <input type="radio" name="package" value="800" data-name="Mobile Legends Double Diamonds" data-items="565 Diamonds" data-stock="" />
+      <div class="content">565 Diamonds</div>
+      <div class="bonus">(500+65 Bonus)</div>
+      <div class="price">₹800</div>
+      <div class="icon"><img src="../../assets/images/product/doublediamonds.png" alt="Double Diamonds" /></div>
+      <div class="checkmark">✓</div>
+    </label>
+  </div>
+</section>
+
+<script>
+  const defaultImage = "../../assets/images/product/weeklypass.png";
+  document.querySelectorAll(".icon").forEach(icon => {
+    // Only add image if not already inside
+    if (!icon.querySelector("img")) {
+      const img = document.createElement("img");
+      img.src = defaultImage;
+      img.alt = "Package Image";
+      icon.appendChild(img);
+    }
+  });
+</script>
+
+  <!-- ===== DETAILS + PAYMENT SECTION ===== -->
+  <div class="details-payment">
+    <!-- PACK DETAILS -->
+    <div class="pack-details">
+      <h3>PACK DETAILS</h3>
+      <div class="details-box">
+        <p><span>Product:</span> <b id="productName">-</b></p>
+        <p><span>Items:</span> <b id="productItems">-</b></p>
+        <p><span>Price:</span> <b id="productPrice">-</b></p>
+      </div>
+    </div>
+
+    <!-- PAYMENT OPTIONS -->
+  <div class="choose-payment">
+    <h3>CHOOSE PAYMENT</h3>
+    <div class="payment-options">
+      <label class="payment-card active">
+        <input type="radio" name="payment" value="QR Code" checked>
+        <div class="left"><i class="fa-regular fa-circle-check"></i> QR Code</div>
+        <div class="right"><i class="fa-solid fa-wallet"></i></div>
+      </label>
+
+      <label class="payment-card">
+        <input type="radio" name="payment" value="upi">
+        <div class="left"><i class="fa-regular fa-circle"></i> UPI Apps</div>
+        <div class="right"><i class="fa-solid fa-qrcode"></i></div>
+      </label>
+    </div>
+
+      <div class="payment-bottom">
+        <div class="amount">
+          <p>Amount Payable</p>
+          <h2 id="amountPayable">-</h2>
+        </div>
+        <button class="buy-btn" id="buyBtn">BUY NOW</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CUSTOM SMOOTH POPUP ===== -->
+  <div id="smoothPopup" class="popup-container">
+    <div class="popup-content">
+      <h3 id="popupTitle">Missing Information</h3>
+      <p id="popupMessage"></p>
+      <button id="popupClose">OK</button>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER PLACEHOLDER ===== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ===== JS SCRIPTS ===== -->
+  <script>
+    // Load Footer
+    fetch('../../footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <script src="script.js"></script>
+  <script src="games.js"></script>
+  <script src="games-static.js"></script>
+</body>
+</html>
