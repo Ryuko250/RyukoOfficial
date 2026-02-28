@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ================= PRODUCT DATABASE =================
   const products = [
-    { name: "Mobile Legends Small Pack", url: "/mobilelegendssmall.html", image: "../../assets/images/game-icons/smallpack.jpg" },
-    { name: "Mobile Legends Large Pack", url: "/mobilelegends.html", image: "../../assets/images/game-icons/mlbb.jpg" },
+    { name: "Mobile Legends Small Pack", url: "mobilelegendssmall.html", image: "../../assets/images/game-icons/smallpack.jpg" },
+    { name: "Mobile Legends Large Pack", url: "mobilelegends.html", image: "../../assets/images/game-icons/mlbb.jpg" },
     { name: "MLBB Weekly Pass", url: "mlbbweeklypass.html", image: "../../assets/images/game-icons/weeklypass.jpg" },
     { name: "Mobile Legends Double Diamonds", url: "doublediamond.html", image: "../../assets/images/game-icons/doublediamonds.jpg" },
     { name: "Starlight Card", url: "mlbbstarlight.html", image: "../../assets/images/game-icons/starlight.jpg" },
