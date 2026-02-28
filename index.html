@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryuko Official Store</title>
+  <meta name="description" content="Ryuko Official Store — Secure and instant game top-ups with trusted service.">
+  <meta name="keywords" content="Ryuko, game store, top up, Mobile Legends, instant delivery">
+  <meta name="author" content="Ryuko Official">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+
+<!-- Top WhatsApp-style promo -->
+<div class="top-promo" id="topPromo">
+  <img src="assets/images/banners/whatsapp.jpg" alt="WA">
+  <div class="promo-text">
+    <strong>Join our WhatsApp Channel!</strong>
+    <small>
+      <a href="https://chat.whatsapp.com/Kz1g4Kn0f9pDVlqdn42T6v" target="_blank">
+        Click here to join WhatsApp channel for latest updates!
+      </a>
+    </small>
+  </div>
+  <div class="promo-close" id="promoClose"><i class="fa fa-times"></i></div>
+</div>
+
+<!-- Header -->
+<header class="">
+  <div class="logo">
+    <img src="assets/images/banners/ryuko.png" alt="Logo">
+  </div>
+
+<!--  <a href="" class="login-btn">
+    <i class="fa fa-user-circle"></i>
+    <span>LOGIN</span>
+  </a> -->
+</header>
+
+<!-- Banner Slider -->
+<section class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="assets/images/banners/banner1.jpg" alt="Banner 1" /></div>
+    <div class="swiper-slide"><img src="assets/images/banners/banner2.jpg" alt="Banner 2" /></div>
+    <div class="swiper-slide"><img src="assets/images/banners/banner3.jpg" alt="Banner 3" /></div>
+    <div class="swiper-slide"><img src="assets/images/banners/banner4.jpg" alt="Banner 4" /></div>
+    <div class="swiper-slide"><img src="assets/images/banners/banner5.jpg" alt="Banner 5" /></div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</section>
+
+<!-- Quick Actions -->
+<!-- <div class="quick-actions">
+  <a href="" class="action">
+    <i class="fa fa-plus-circle"></i>
+    <span>Add Money</span>
+  </a>
+
+  <a href="" class="action new">
+    <i class="fa fa-map-marker-alt"></i>
+    <span>Region Check</span>
+  </a>
+
+  <a href="" class="action">
+    <i class="fa fa-history"></i>
+    <span>History</span>
+  </a>
+
+  <a href="" class="action">
+    <i class="fa fa-trophy"></i>
+    <span>Leaderboard</span>
+  </a>
+</div> -->
+
+<!-- Help Bar -->
+<div class="help-bar">
+  <i class="fa fa-phone"></i>
+  <div class="scroll-wrapper">
+    <div class="scroll-track">
+      <div class="scroll-text">
+        NEED HELP? CONTACT US ON WHATSAPP +917005121396 | SUPPORT AVAILABLE 24/7
+      </div>
+      <div class="scroll-text">
+        NEED HELP? CONTACT US ON WHATSAPP +917005121396 | SUPPORT AVAILABLE 24/7
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Most Selling -->
+<section class="section">
+  <div class="section-title">
+    <h3>MOST SELLING 🔥</h3>
+    <small><a href="games.html">View More &gt;</a></small>
+  </div>
+
+  <div class="product-grid" id="most-selling"></div>
+</section>
+
+
+<!-- Popular Games -->
+<section class="section">
+  <div class="section-title">
+    <h3>POPULAR GAMES</h3>
+    <small><a href="games.html">View More &gt;</a></small>
+  </div>
+
+  <div class="product-grid" id="popular-games"></div>
+</section>
+
+<!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-panel">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search games or packs..." autocomplete="off">
+        <button id="close-search">&times;</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+      <div id="no-results" class="no-results">No results found 😕</div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  fetch("games-data.html")
+    .then(response => response.text())
+    .then(data => {
+
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = data;
+
+      const allGames = tempDiv.querySelectorAll(".product-card");
+
+      const mostSelling = document.getElementById("most-selling");
+      const popularGames = document.getElementById("popular-games");
+
+      allGames.forEach(game => {
+        const category = game.getAttribute("data-category");
+
+        if (category === "most-selling" && mostSelling) {
+          mostSelling.appendChild(game.cloneNode(true));
+        }
+
+        if (category === "popular" && popularGames) {
+          popularGames.appendChild(game.cloneNode(true));
+        }
+      });
+
+    })
+    .catch(error => console.log("Error loading games:", error));
+
+});
+</script>
+
+<!-- Bottom Nav -->
+<div id="bottom-nav-container"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("bottom-nav-container").innerHTML = data;
+  });
+</script>
+
+  <!-- Your page content -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Load Footer
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

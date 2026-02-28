@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Games | Ryuko Official Store</title>
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">
+    <img src="assets/images/banners/ryuko.png" alt="Logo">
+  </div>
+
+<!--  <a href="login.html" class="login-btn">
+    <i class="fa fa-user-circle"></i>
+    <span>LOGIN</span>
+  </a> -->
+</header>
+
+   <!-- Products -->
+<section class="section">
+  <div class="section-title">
+    <h3>All Games</h3>
+  </div>
+  <div class="product-grid" id="all-products">
+    <!-- Product cards as in your original code -->
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  fetch("games-data.html")
+    .then(response => response.text())
+    .then(data => {
+
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = data;
+
+      const allGames = tempDiv.querySelectorAll(".product-card");
+
+      const container = document.getElementById("all-products");
+
+      allGames.forEach(game => {
+        container.appendChild(game.cloneNode(true));
+      });
+
+    })
+    .catch(error => console.log("Error loading games:", error));
+
+});
+</script>
+
+<!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-panel">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search games or packs..." autocomplete="off">
+        <button id="close-search">&times;</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+      <div id="no-results" class="no-results">No results found 😕</div>
+    </div>
+  </div>
+
+<!-- Bottom Nav -->
+<div id="bottom-nav-container"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("bottom-nav-container").innerHTML = data;
+  });
+</script>
+
+<script src="script.js"></script>
+  <!-- Your page content -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Load Footer
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryuko Official — Payment Gateway</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="payment1.css" />
+  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- QRCodeJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="gateway-container">
+    <header class="gateway-header">
+      <h1>Complete Payment</h1>
+      <p>Pay via UPI — secure and instant</p>
+    </header>
+      
+      <!-- PACK DETAILS -->
+    <section class="details-section">
+      <h3>PACK DETAILS</h3>
+      <div class="details-box">
+        <p><span>Product:</span> <b id="productName">-</b></p>
+        <p><span>Items:</span> <b id="productItems">-</b></p>
+        <p><span>Amount:</span> <b id="amountPayable">-</b></p>
+        <p><span>User ID:</span> <b id="userId">-</b></p>
+        <p><span>Zone ID:</span> <b id="zoneId">-</b></p>
+        <p><span>Server:</span> <b id="server">-</b></p>
+      </div>
+    </section>
+
+    <section class="upi-section">
+      <div class="qr-area">
+        <div id="qrcode"></div>
+      </div>
+      <div class="upi-info">
+        <p>Scan the QR with your UPI app (GPay / PhonePe / Paytm)</p>
+        <p id="upiLink" class="upi-text"></p>
+        <div class="upi-buttons">
+          <button id="openUpiBtn">Open UPI App</button>
+          <button id="copyUpiBtn">Copy UPI Link</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="upload-section">
+      <h3>Upload Payment Screenshot</h3>
+      <input type="file" id="screenshotInput" accept="image/*" />
+      <div id="previewContainer" class="preview-container" hidden>
+        <img id="previewImage" alt="Payment Screenshot Preview" />
+        <button id="removeImgBtn">Remove</button>
+      </div>
+    </section>
+
+    <section class="confirm-section">
+      <button id="confirmBtn">Confirm & Send to WhatsApp</button>
+      <p id="statusMsg" class="status-msg"></p>
+    </section>
+  </div>
+  
+      <!-- Copyright -->
+    <p class="copy">Ryuko Official ©2025 – ALL RIGHTS RESERVED</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="payment.js"></script>
+</body>
+</html>
