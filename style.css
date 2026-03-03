@@ -201,7 +201,7 @@ header {
   background: var(--card);
   border-radius: 20px;
   padding: 10px 15px;
-  margin: 0 15px 15px;
+  margin: 0 15px 0;
   margin-top: 20px;
   overflow: hidden;
 }
