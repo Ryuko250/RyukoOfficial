@@ -224,8 +224,8 @@ header {
   align-items: center;
   margin: 0 16px 12px;
 }
-.section-title h3 { color: var(--text); font-size: 25px; font-weight: 600; }
-.section-title small, .section-title a { color: var(--text); text-decoration: none; font-weight: 500; }
+.section-title h3 { color: var(--text); font-size: 25px; font-weight: 600; margin-top: 20px; }
+.section-title small, .section-title a { color: var(--text); text-decoration: none; font-weight: 500; margin-top: 20px; }
 
 .product-grid {
   display: grid;
