@@ -2,19 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ================= PRODUCT DATABASE =================
   const products = [
-    { name: "Event Recharge Tasks", url: "event.html", image: "../../assets/images/game-icons/event.jpg" },
-    { name: "Mobile Legends Small Pack", url: "mobilelegendssmall.html", image: "../../assets/images/game-icons/smallpack.jpg" },
-    { name: "Mobile Legends Large Pack", url: "mobilelegends.html", image: "../../assets/images/game-icons/mlbb.jpg" },
-    { name: "MLBB Weekly Pass", url: "mlbbweeklypass.html", image: "../../assets/images/game-icons/weeklypass.jpg" },
-    { name: "Mobile Legends Double Diamonds", url: "doublediamond.html", image: "../../assets/images/game-icons/doublediamonds.jpg" },
-    { name: "Starlight Card", url: "mlbbstarlight.html", image: "../../assets/images/game-icons/starlight.jpg" },
-    { name: "Magic Chess Go Go", url: "magicchessgogo.html", image: "../../assets/images/game-icons/magicchessgogo.jpg" },
-    { name: "Flash Sales", url: "flashsale.html", image: "../../assets/images/game-icons/flashsale.jpg" },
-    { name: "BGMI Battleground Mobile India", url: "bgmi.html", image: "../../assets/images/game-icons/bgmi.jpg" },
-    { name: "PUBG Mobile Global", url: "pubgmobile.html", image: "../../assets/images/game-icons/pubgmobile.jpg" },
-    { name: "Genshin Impact", url: "genshinimpact.html", image: "../../assets/images/game-icons/genshinimpact.jpg" },
-    { name: "Honkai Star Rail", url: "honkaistar.html", image: "../../assets/images/game-icons/honkaistar.jpg" },
-    { name: "Honor Of Kings", url: "honorofkings.html", image: "../../assets/images/game-icons/honorofkings.jpg" }
+    { name: "EVENT RECHARGE TASKS", url: "event.html", image: "../../assets/images/game-icons/event.jpg" },
+    { name: "MOBILE LEGENDS SMALL PACKS", url: "mobilelegendssmall.html", image: "../../assets/images/game-icons/smallpack.jpg" },
+    { name: "MOBILE LEGENDS LARGE PACKS", url: "mobilelegends.html", image: "../../assets/images/game-icons/mlbb.jpg" },
+    { name: "MLBB WEEKLY PASS", url: "mlbbweeklypass.html", image: "../../assets/images/game-icons/weeklypass.jpg" },
+    { name: "MOBILE LEGENDS DOUBLE DIAMONDS", url: "doublediamond.html", image: "../../assets/images/game-icons/doublediamonds.jpg" },
+    { name: "STARLIGHT CARD", url: "mlbbstarlight.html", image: "../../assets/images/game-icons/starlight.jpg" },
+    { name: "MAGIC CHESS GO GO", url: "magicchessgogo.html", image: "../../assets/images/game-icons/magicchessgogo.jpg" },
+    { name: "FLASH SALES", url: "flashsale.html", image: "../../assets/images/game-icons/flashsale.jpg" },
+    { name: "BGMI BATTLEGROUND MOBILE INDIA", url: "bgmi.html", image: "../../assets/images/game-icons/bgmi.jpg" },
+    { name: "PUBG MOBILE GLOBAL", url: "pubgmobile.html", image: "../../assets/images/game-icons/pubgmobile.jpg" },
+    { name: "GENSHIN IMPACT", url: "genshinimpact.html", image: "../../assets/images/game-icons/genshinimpact.jpg" },
+    { name: "HONKAI STAR RAIL", url: "honkaistar.html", image: "../../assets/images/game-icons/honkaistar.jpg" },
+    { name: "HONOR OF KINGS", url: "honorofkings.html", image: "../../assets/images/game-icons/honorofkings.jpg" }
   ];
 
   let supportOpen = false;
