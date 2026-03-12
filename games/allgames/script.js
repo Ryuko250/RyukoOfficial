@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ================= PRODUCT DATABASE =================
   const products = [
-    { name: "Event Recharge Task", url: "event.html", image: "../../assets/images/game-icons/event.jpg" },
+    { name: "Event Recharge Tasks", url: "event.html", image: "../../assets/images/game-icons/event.jpg" },
     { name: "Mobile Legends Small Pack", url: "mobilelegendssmall.html", image: "../../assets/images/game-icons/smallpack.jpg" },
     { name: "Mobile Legends Large Pack", url: "mobilelegends.html", image: "../../assets/images/game-icons/mlbb.jpg" },
     { name: "MLBB Weekly Pass", url: "mlbbweeklypass.html", image: "../../assets/images/game-icons/weeklypass.jpg" },
