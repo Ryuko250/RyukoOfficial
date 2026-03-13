@@ -207,41 +207,10 @@
     </div>
   </div>
   
-    <div id="maintenance-mode">
-      <div class="grid-bg"></div>
 
-      <div class="corner corner1"></div>
-      <div class="corner corner2"></div>
-      <div class="corner corner3"></div>
-      <div class="corner corner4"></div>
-
-     <div class="maintenance-center">
-      <h1>Website Under Maintenance</h1>
-      <p>We are currently improving the website.<br>
-       Please come back after some time.</p>
-
-      <div class="cube-loader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      </div>
-
-      </div>
-    </div>
 
   <!-- ===== JS SCRIPTS ===== -->
   <script>
-     const maintenanceMode = false;
-     // true = website closed
-     // false = website open
-     if(maintenanceMode){
-       document.getElementById("maintenance-mode").style.display="flex";
-       Array.from(document.body.children).forEach(el=>{
-         if(el.id !== "maintenance-mode"){
-           el.style.display="none"; }
-       });
-     }
     
     // page loader
 /* Hide loader after page loads */
