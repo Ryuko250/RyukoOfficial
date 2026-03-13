@@ -14,16 +14,39 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <!-- Icon CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
+         
+        <div id="maintenance-mode">
+          <div class="maintenance-center">
+             <h1>Website Under Maintenance</h1>
+             <p>We are currently improving the website.
+             <br>Please come back after some time.</p>
+             <div class="maintenance-loader"></div>
+          </div>
+        </div>
+        
+<script>
+     const maintenanceMode = true;
+     if(maintenanceMode){
+       document.getElementById("maintenance-mode").style.display="flex";
+       Array.from(document.body.children).forEach(el=>{
+         if(el.id !== "maintenance-mode"){
+           el.style.display="none"; }
+       });
+     }
+</script>
 
 <!-- Top WhatsApp-style promo -->
 <div class="top-promo" id="topPromo">
-  <img src="assets/images/banners/whatsapp.jpg" alt="WA">
+  <img src="assets/banners/whatsapp.jpg" alt="WA">
   <div class="promo-text">
     <strong>Join our WhatsApp Channel!</strong>
     <small>
@@ -38,7 +61,7 @@
 <!-- Header -->
 <header class="">
   <div class="logo">
-    <img src="assets/images/banners/ryuko.png" alt="Logo">
+    <img src="assets/banners/ryuko.png" alt="Logo">
   </div>
 
 <!--  <a href="" class="login-btn">
@@ -50,16 +73,26 @@
 <!-- Banner Slider -->
 <section class="swiper mySwiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="assets/images/banners/banner1.jpg" alt="Banner 1" /></div>
-    <div class="swiper-slide"><img src="assets/images/banners/banner2.jpg" alt="Banner 2" /></div>
-    <div class="swiper-slide"><img src="assets/images/banners/banner3.jpg" alt="Banner 3" /></div>
-    <div class="swiper-slide"><img src="assets/images/banners/banner4.jpg" alt="Banner 4" /></div>
-    <div class="swiper-slide"><img src="assets/images/banners/banner5.jpg" alt="Banner 5" /></div>
+    <div class="swiper-slide"><img src="assets/banners/banner1.jpg" alt="Banner 1" /></div>
+    <div class="swiper-slide"><img src="assets/banners/banner2.jpg" alt="Banner 2" /></div>
+    <div class="swiper-slide"><img src="assets/banners/banner3.jpg" alt="Banner 3" /></div>
+    <div class="swiper-slide"><img src="assets/banners/banner4.jpg" alt="Banner 4" /></div>
+    <div class="swiper-slide"><img src="assets/banners/banner5.jpg" alt="Banner 5" /></div>
   </div>
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
   <div class="swiper-pagination"></div>
 </section>
+
+<!-- 🔔 Notice Popup -->
+<div id="notice-popup" class="notice-overlay">
+  <div class="notice-box">
+    <!-- Notice Image -->
+    <img src="assets/game-icons/event.jpg" alt="Notice Banner" class="notice-img">
+    <!-- Close Button -->
+    <button id="close-notice" class="notice-close">Close</button>
+  </div>
+</div>
 
 <!-- Quick Actions -->
 <!-- <div class="quick-actions">
@@ -131,8 +164,91 @@
       <div id="no-results" class="no-results">No results found 😕</div>
     </div>
   </div>
+  
+  <!-- Customer Support Section -->
+  <section class="support-section">
+      <h2 class="support-title">CUSTOMER SUPPORT</h2>
+      <p class="support-subtitle">Reach Us At</p>
+    <div class="support-container">
 
-<script>
+    <a href="mailto:akazastorecontact@gmail.com" class="support-card">
+    <div class="support-icon">
+      <span class="material-symbols-outlined">mail</span>
+    </div>
+      <span class="support-text">Email</span>
+      <span class="support-arrow">arrow_forward</span>
+    </a>
+
+    <a href="index.html" class="support-card">
+    <div class="support-icon">
+      <span class="material-symbols-outlined">help</span>
+    </div>
+      <span class="support-text">FAQ</span>
+      <span class="support-arrow">arrow_forward</span>
+    </a>
+
+    <a href="index.html" class="support-card">
+    <div class="support-icon">
+      <span class="material-symbols-outlined">chat_bubble</span>
+    </div>
+      <span class="support-text">Give Feedback</span>
+      <span class="support-arrow">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<section class="subscribe-wrap">
+  <div class="subscribe-banner">
+
+    <h2>SUBSCRIBE</h2>
+    <p>Get The Best Deals Now!</p>
+
+    <div class="subscribe-icons">
+      <a href="https://www.instagram.com/akazastore_45?igsh=MTc2emVmeTNsajk1bQ=="><i class="fab fa-instagram"></i></a>
+      <a href="https://whatsapp.com/channel/0029VbASGnDGpLHWTzl7NM45"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://whatsapp.com/channel/0029VbASGnDGpLHWTzl7NM45"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com/@akazastore01?si=l8H6jHoT77PloVBB"><i class="fab fa-youtube"></i></a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Bottom Nav -->
+  <div id="bottom-nav-container"></div>
+
+  <!-- Your page content -->
+  <div id="footer-placeholder"></div>
+  
+    <!--  page loader -->
+    <div id="site-loader">
+       <div class="loader-box">
+       <div class="loader-ring"></div>
+       <p>Loading Website</p>
+    </div>
+  </div>
+
+  <!-- ===== JS SCRIPTS ===== -->
+  <script>
+    // page loader
+/* Hide loader after page loads */
+    window.addEventListener("load", function(){
+      document.getElementById("site-loader").style.opacity = "0";
+      setTimeout(()=>{
+        document.getElementById("site-loader").style.display="none";
+      },400);
+    });
+
+/* Show loader when user clicks any link */
+    document.querySelectorAll("a").forEach(link=>{
+      link.addEventListener("click",function(){
+        if(this.href && !this.href.startsWith("#")){
+          document.getElementById("site-loader").style.display="flex";
+          document.getElementById("site-loader").style.opacity="1";
+        }
+      });
+    });
+    
+   // Load nav
 document.addEventListener("DOMContentLoaded", function () {
 
   fetch("games-data.html")
@@ -161,34 +277,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
     .catch(error => console.log("Error loading games:", error));
-
-});
-</script>
-
-<!-- Bottom Nav -->
-<div id="bottom-nav-container"></div>
-
-<script>
-fetch("nav.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("bottom-nav-container").innerHTML = data;
   });
-</script>
+    
+    // Load nav
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+       document.getElementById("bottom-nav-container").innerHTML = data;
+      });
 
-  <!-- Your page content -->
-  <div id="footer-placeholder"></div>
-
-  <script>
     // Load Footer
-    fetch('footer1.html')
+    fetch('../footer.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
       });
   </script>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
