@@ -1,0 +1,275 @@
+/* ===== COLOR VARIABLES (EDIT HERE ONLY) ===== */
+:root {
+  --bg-main: #0e0e0e;
+  --bg-container: #1a1a1a;
+  --bg-box: #121212;
+  --bg-input: #1f1f1f;
+  --bg-upi-text: #141414;
+
+  --border-main: #333;
+  --border-box: #2a2a2a;
+
+  --text-main: #fff;
+  --text-secondary: #d2d2d2;
+  --text-muted: #bcbcbc;
+  --text-copyright: #999;
+
+  --primary-color: #008EFF;
+  --primary-gradient-1: #008EFF;
+  --primary-gradient-2: #0280FF;
+
+  --success-gradient-1: #10a37f;
+  --success-gradient-2: #0e7f65;
+
+  --danger-color: #0280FF;
+  --status-color: #ff2a00;
+
+  --white: #ffffff;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.gateway-container {
+  max-width: 700px;
+  width: 85%;
+  height: auto;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--bg-container);
+  border-radius: 12px;
+  border: 1px solid var(--border-main);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.gateway-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gateway-header h1 {
+  font-size: 22px;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.gateway-header p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ===== DETAILS ===== */
+.details-section h3,
+.upload-section h3 {
+  color: var(--primary-color);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.details-box {
+  background: var(--bg-box);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-box);
+}
+
+.details-box p {
+  margin: 6px 0;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-box span {
+  color: var(--text-muted);
+}
+
+/* ===== UPI SECTION ===== */
+.upi-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.qr-area {
+  width: 220px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 15px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upi-info {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  font-size: 25px;
+  margin-top: -10px;
+}
+
+.upi-text {
+  text-align: left;
+  background: var(--bg-upi-text);
+  border: 1px solid var(--border-main);
+  padding: 10px;
+  border-radius: 6px;
+  word-wrap: break-word;
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+.upi-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: left;
+}
+
+.upi-buttons button {
+  background: linear-gradient(
+    90deg,
+    var(--primary-gradient-1),
+    var(--primary-gradient-2)
+  );
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.upi-buttons button:hover {
+  opacity: 0.9;
+  transform: scale(0.97);
+}
+
+.upload-section {
+  margin-top: 20px;
+}
+
+#screenshotInput {
+  background: var(--bg-input);
+  border: 1px solid var(--border-main);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--text-main);
+  width: 94%;
+  font-family: "Poppins", sans-serif;
+}
+
+.preview-container {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.preview-container img {
+  width: 20%;
+  border-radius: 10px;
+  border: 1px solid var(--border-main);
+  object-fit: contain;
+}
+
+#removeImgBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--danger-color);
+  border: none;
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.confirm-section {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#confirmBtn {
+  background: linear-gradient(
+    90deg,
+    var(--success-gradient-1),
+    var(--success-gradient-2)
+  );
+  color: var(--white);
+  border: none;
+  padding: 14px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+#confirmBtn:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.status-msg {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--status-color);
+  text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .gateway-container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .qr-area {
+    width: 220px;
+  }
+
+  .upi-info {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: -10px;
+  }
+  
+  .upi-text {
+    padding: 10px;
+    font-size: 7px;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .gateway-header h1 {
+    font-size: 20px;
+  }
+
+  .upi-buttons button {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* ===== COPYRIGHT ===== */
+.copy {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-copyright);
+}
