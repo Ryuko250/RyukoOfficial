@@ -1,0 +1,124 @@
+<!-- GAME DATA START -->
+
+<div id="all-games">
+
+  <!-- Most Selling -->
+  <a href="games/event.html" class="product-card" data-category="most-selling">
+    <div class="badge">EVENT TASK</div>
+    <div class="thumb"><img src="assets/game-icons/event.jpg"></div>
+    <div class="info"><h4>PREMIUM SUPPLY</h4><p>RECHARGE TASK</p></div>
+  </a>
+  
+  <a href="games/mobilelegendssmall.html" class="product-card" data-category="most-selling">
+    <div class="badge">FROM 3 💎</div>
+    <div class="thumb"><img src="assets/game-icons/smallpack.jpg"></div>
+    <div class="info"><h4>MOBILE LEGENDS</h4><p>SMALL PACKS</p></div>
+  </a>
+
+  <a href="games/mobilelegends.html" class="product-card" data-category="most-selling">
+    <div class="badge">FROM 55 💎</div>
+    <div class="thumb"><img src="assets/game-icons/mlbb.jpg"></div>
+    <div class="info"><h4>MOBILE LEGENDS</h4><p>LARGE PACK</p></div>
+  </a>
+
+  <a href="games/mlbbweeklypass.html" class="product-card" data-category="most-selling">
+    <div class="badge">WEEKLY PASS</div>
+    <div class="thumb"><img src="assets/game-icons/weeklypass.jpg"></div>
+    <div class="info"><h4>MOBILE LEGENDS</h4><p>WEEKLY PASS</p></div>
+  </a>
+
+  <a href="games/doublediamond.html" class="product-card" data-category="most-selling">
+    <div class="badge">BONUS</div>
+    <div class="thumb"><img src="assets/game-icons/doublediamonds.jpg"></div>
+    <div class="info"><h4>MOBILE LEGENDS</h4><p>DOUBLE DIAMONDS</p></div>
+  </a>
+
+  <a href="games/mlbbstarlight.html" class="product-card" data-category="most-selling">
+    <div class="badge">VIA GIFTING</div>
+    <div class="thumb"><img src="assets/game-icons/starlight.jpg"></div>
+    <div class="info"><h4>STARLIGHT CARD</h4><p>SUBSCRIPTION</p></div>
+  </a>
+
+  <a href="games/magicchessgogo.html" class="product-card" data-category="most-selling">
+    <div class="badge">MCGG</div>
+    <div class="thumb"><img src="assets/game-icons/magicchessgogo.jpg"></div>
+    <div class="info"><h4>MAGIC CHESS GO GO</h4></div>
+  </a>
+
+  <a href="games/flashsale.html" class="product-card" data-category="most-selling">
+    <div class="badge">10% OFF</div>
+    <div class="thumb"><img src="assets/game-icons/flashsale.jpg"></div>
+    <div class="info"><h4>FLASH SALE</h4><p>OFFER</p></div>
+  </a>
+
+  <!-- Popular Games -->
+  <a href="games/bgmi.html" class="product-card" data-category="popular">
+    <div class="badge">INDIA</div>
+    <div class="thumb"><img src="assets/game-icons/bgmi.jpg"></div>
+    <div class="info"><h4>BGMI</h4><p>INDIA</p></div>
+  </a>
+
+  <a href="games/pubgmobile.html" class="product-card" data-category="popular">
+    <div class="badge">GLOBAL</div>
+    <div class="thumb"><img src="assets/game-icons/pubgmobile.jpg"></div>
+    <div class="info"><h4>PUBG MOBILE</h4><p>GLOBAL</p></div>
+  </a>
+
+  <a href="games/genshinimpact.html" class="product-card coming-soon" data-category="popular" style="display: none;">
+    <div class="badge">10% OFF</div>
+    <div class="thumb"><img src="assets/game-icons/genshinimpact.jpg"></div>
+    <div class="info"><h4>GENSHIN IMPACT</h4><p>ALL SERVER</p></div>
+  </a>
+
+  <a href="games/honkaistar.html" class="product-card coming-soon" data-category="popular" style="display: none;">
+    <div class="badge">10% OFF</div>
+    <div class="thumb"><img src="assets/game-icons/honkaistar.jpg"></div>
+    <div class="info"><h4>HONKAI STAR RAIL</h4><p>ALL SERVER</p></div>
+  </a>
+
+  <a href="games/honorofkings.html" class="product-card" data-category="popular" style="display: ;">
+    <div class="badge">10% OFF</div>
+    <div class="thumb"><img src="assets/game-icons/honorofkings.jpg"></div>
+    <div class="info"><h4>HONOR OF KINGS</h4><p>ALL SERVER</p></div>
+  </a>
+  
+      <!-- Most Selling -->
+  <a href="games/netflix.html" class="product-card" data-category="social-media">
+    <div class="badge">ALL IN ONE</div>
+    <div class="thumb"><img src="assets/game-icons/netflix.jpg"></div>
+    <div class="info"><h4>ALL IN ONE</h4><p>OTT APPLICATION</p></div>
+  </a>
+
+</div>
+
+    <!--  page loader -->
+    <div id="site-loader">
+       <div class="loader-box">
+       <div class="loader-ring"></div>
+       <p>Loading Website</p>
+    </div>
+  </div>
+
+  <script>
+    // page loader
+/* Hide loader after page loads */
+    window.addEventListener("load", function(){
+      document.getElementById("site-loader").style.opacity = "0";
+      setTimeout(()=>{
+        document.getElementById("site-loader").style.display="none";
+      },400);
+    });
+
+/* Show loader when user clicks any link */
+    document.querySelectorAll("a").forEach(link=>{
+      link.addEventListener("click",function(){
+        if(this.href && !this.href.startsWith("#")){
+          document.getElementById("site-loader").style.display="flex";
+          document.getElementById("site-loader").style.opacity="1";
+        }
+      });
+    });
+  
+  </script>
+
+<!-- GAME DATA END -->
