@@ -4,7 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", function(){
 
-  const maintenanceMode = true; 
+  const maintenanceMode = false; 
   // true  = website closed
   // false = website open
 
